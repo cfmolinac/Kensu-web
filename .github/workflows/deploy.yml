@@ -1,0 +1,56 @@
+name: Deploy to GCP
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build production
+        run: npm run build
+      
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.GCP_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.GCP_HOST }} >> ~/.ssh/known_hosts
+      
+      - name: Deploy to server
+        run: |
+          rsync -avz --delete \
+            --exclude='node_modules' \
+            --exclude='.git' \
+            --exclude='.env*' \
+            .next/ ${{ secrets.GCP_USER }}@${{ secrets.GCP_HOST }}:~/Kensu-web/.next/
+          
+          rsync -avz \
+            package.json \
+            package-lock.json \
+            next.config.ts \
+            public/ \
+            ${{ secrets.GCP_USER }}@${{ secrets.GCP_HOST }}:~/Kensu-web/
+      
+      - name: Restart application
+        run: |
+          ssh ${{ secrets.GCP_USER }}@${{ secrets.GCP_HOST }} << 'EOF'
+            cd ~/Kensu-web
+            npm install --production
+            pm2 restart kensu-web || pm2 start npm --name kensu-web -- start
+            pm2 save
+          EOF
