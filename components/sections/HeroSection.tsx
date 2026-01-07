@@ -53,7 +53,7 @@ export default function HeroSection() {
             />
             <div className="absolute inset-0 px-[26px] py-[24px] overflow-hidden">
               <Image
-                src="/assets/images/screenshots/app-screen.png"
+                src="/assets/images/screenshots/app-screen.png?v=2"
                 alt="User interface of a family organizer mobile app"
                 width={298}
                 height={652}
