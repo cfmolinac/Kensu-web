@@ -43,8 +43,10 @@ jobs:
             package.json \
             package-lock.json \
             next.config.ts \
-            public/ \
             ${{ secrets.GCP_USER }}@${{ secrets.GCP_HOST }}:~/Kensu-web/
+          
+          rsync -avz --delete \
+            public/ ${{ secrets.GCP_USER }}@${{ secrets.GCP_HOST }}:~/Kensu-web/public/
       
       - name: Restart application
         run: |
