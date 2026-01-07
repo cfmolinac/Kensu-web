@@ -22,6 +22,12 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    localPatterns: [
+      {
+        pathname: '/assets/images/**',
+        search: '',
+      },
+    ],
   },
 
   // Optimización de fuentes
