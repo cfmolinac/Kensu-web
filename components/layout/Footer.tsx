@@ -35,6 +35,11 @@ export default function Footer() {
                   Cómo funciona
                 </a>
               </li>
+              <li>
+                <a href="/blog" className="text-gray-600 hover:text-kensu-blue">
+                  Blog
+                </a>
+              </li>
             </ul>
 
             {/* Compañía dentro de la misma columna - solo mobile */}

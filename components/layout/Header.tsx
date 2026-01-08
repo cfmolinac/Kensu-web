@@ -37,6 +37,7 @@ export default function Header() {
           <a href="/" className="text-gray-600 hover:text-kensu-blue transition-colors text-sm">Inicio</a>
           <a href="/#features" className="text-gray-600 hover:text-kensu-blue transition-colors text-sm">Características</a>
           <a href="/#how-it-works" className="text-gray-600 hover:text-kensu-blue transition-colors text-sm">Cómo Funciona</a>
+          <a href="/blog" className="text-gray-600 hover:text-kensu-blue transition-colors text-sm">Blog</a>
           <a href="/quienes-somos" className="text-gray-600 hover:text-kensu-blue transition-colors text-sm">Quiénes Somos</a>
         </div>
 
@@ -63,6 +64,7 @@ export default function Header() {
             <a href="/" className="text-gray-600 hover:text-kensu-blue transition-colors">Inicio</a>
             <a href="/#features" className="text-gray-600 hover:text-kensu-blue transition-colors">Características</a>
             <a href="/#how-it-works" className="text-gray-600 hover:text-kensu-blue transition-colors">Cómo Funciona</a>
+            <a href="/blog" className="text-gray-600 hover:text-kensu-blue transition-colors">Blog</a>
             <a href="/quienes-somos" className="text-gray-600 hover:text-kensu-blue transition-colors">Quiénes Somos</a>
           </div>
 
