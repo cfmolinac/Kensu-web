@@ -26,7 +26,7 @@ export default function HowItWorksSection() {
               <div>
                 <h3 className="text-xl font-semibold text-kensu-blue mb-2">Sincroniza las fuentes</h3>
                 <p className="text-gray-600">
-                  Conecta la app con colegios, academias y centros médicos para recibir toda la información automáticamente.
+                  Conecta la app con tu correo, whatsapp y calendarios para recibir toda la información automáticamente.
                 </p>
               </div>
             </div>

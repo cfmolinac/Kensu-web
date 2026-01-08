@@ -12,13 +12,13 @@ export default function Header() {
             <a href="/">
               <Image
                 alt="Kensu Logo"
-                src="/assets/images/logo/logo-2.png"
+                src="/assets/images/logo/logo-3.png"
                 id="iskty"
-                width={214}
-                height={91}
+                width={188}
+                height={80}
                 priority
-                style={{ width: '160px', height: 'auto' }}
-                className="cursor-pointer lg:!w-[214px]"
+                style={{ width: '188px', height: 'auto' }}
+                className="cursor-pointer lg:!w-[188px]"
               />
             </a>
           </div>
@@ -47,12 +47,12 @@ export default function Header() {
             <a href="/">
               <Image
                 alt="Kensu Logo"
-                src="/assets/images/logo/logo-2.png"
+                src="/assets/images/logo/logo-3.png"
                 id="iskty"
-                width={214}
-                height={91}
+                width={188}
+                height={80}
                 priority
-                style={{ width: '214px', height: 'auto' }}
+                style={{ width: '188px', height: 'auto' }}
                 className="cursor-pointer"
               />
             </a>
