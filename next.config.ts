@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
 
+  // Variables de entorno públicas con timestamp de build
+  env: {
+    BUILD_ID: Date.now().toString(),
+  },
+
   // Optimización de imágenes
   images: {
     formats: ['image/webp', 'image/avif'],
