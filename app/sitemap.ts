@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://kensuapp.com';
+    const baseUrl = 'https://kensu.cl';
 
     return [
         {
